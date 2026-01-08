@@ -288,3 +288,23 @@ body {
     font-size: 0.8rem;
     color: #777;
 }
+/* LOGO IN NAVIGATION */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 28px;
+    width: auto;
+    display: block;
+}
+
+.brand {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+}
