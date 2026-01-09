@@ -383,5 +383,29 @@ body {
     line-height: 1.6;
     color: #d0d0d0;
 }
+/* DSGVO Checkbox */
+.dsgvo-checkbox {
+    display: flex;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: #bdbdbd;
+    margin: 15px 0 25px;
+    align-items: flex-start;
+}
+
+.dsgvo-checkbox input {
+    margin-top: 4px;
+}
+
+.dsgvo-checkbox a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.dsgvo-checkbox a:hover {
+    opacity: 0.8;
+}
+
+
 
 
