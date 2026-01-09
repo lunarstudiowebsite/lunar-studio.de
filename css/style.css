@@ -423,6 +423,46 @@ body {
     transform: translateY(-2px);
     opacity: 0.9;
 }
+/* BASE BUTTON (für ALLE Buttons) */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 36px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* OUTLINE STYLE – wie "Mehr lesen" */
+.btn-outline {
+    border: 1.5px solid #777;
+    color: #fff;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    border-color: #fff;
+    transform: translateY(-2px);
+}
+
+/* PRIMARY STYLE – identisch, nur stärker */
+.btn-primary {
+    border: 1.5px solid var(--accent-color);
+    color: #fff;
+    background: transparent;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    color: #000;
+    transform: translateY(-2px);
+}
+
 
 
 
