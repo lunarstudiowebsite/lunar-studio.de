@@ -353,4 +353,35 @@ body {
     color: var(--accent-color);
     margin-bottom: 15px;
 }
+/* ZWEITE HINTERGRUNDFARBE */
+.content-dark {
+    background-color: #0b0b10;
+}
+
+/* PROCESS SECTION */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.process-step {
+    background: #08080a;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.process-step h3 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.process-step p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #d0d0d0;
+}
+
 
