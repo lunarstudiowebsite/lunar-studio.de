@@ -308,3 +308,49 @@ body {
     color: #ffffff;
     letter-spacing: 0.05em;
 }
+.services {
+    padding: 80px 20px;
+    background-color: #0f0f14;
+}
+
+.services .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.services-intro {
+    color: #b0b0b0;
+    margin-bottom: 50px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: #08080a;
+    padding: 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.service-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
