@@ -462,6 +462,21 @@ body {
     color: #000;
     transform: translateY(-2px);
 }
+a.btn {
+    all: unset;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 36px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+
 
 
 
