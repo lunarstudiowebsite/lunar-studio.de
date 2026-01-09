@@ -49,9 +49,13 @@
         <form class="contact-form" action="https://formspree.io/f/mnjjanjg" method="post">
             <input type="text" name="name" placeholder="Lunar Studio" required>
             <input type="email" name="email" placeholder="kontakt@lunar-studio.de" required>
-            <textarea name="nachricht" placeholder="Vielen Dank!" required></textarea>
-            <input type="text" name="website" style="display:none">
-            <button type="submit">Nachricht senden</button>
+            <textarea name="nachricht" placeholder="Ihre Nachricht" required></textarea>
+<label class="dsgvo-checkbox">
+    <input type="checkbox" name="dsgvo" required>
+    Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und akzeptiere sie.
+</label>
+<input type="text" name="website" style="display:none">
+<button type="submit">Nachricht senden</button>
         </form>
     </section>
 </main>
@@ -73,5 +77,6 @@
 
 </body>
 </html>
+
 
 
