@@ -318,6 +318,28 @@ body {
         display: flex;
     }
 }
+/* EMAIL SHOWCASE */
+.email-showcase {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.email-showcase img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .email-showcase {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 
 
 
