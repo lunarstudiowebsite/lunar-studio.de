@@ -83,7 +83,7 @@ body {
 
 /* HERO */
 .hero {
-    height: 80vh;
+    height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -318,6 +318,7 @@ body {
         display: flex;
     }
 }
+
 
 
 
