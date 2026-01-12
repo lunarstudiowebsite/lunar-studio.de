@@ -83,7 +83,7 @@ body {
 
 /* HERO */
 .hero {
-    height: 30vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -104,7 +104,7 @@ body {
 
 /* HERO BUTTON */
 .hero-button {
-    margin-top: 20px;
+    margin-top: 40px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -127,7 +127,7 @@ body {
 
 /* SERVICES */
 .services {
-    padding: 30px 20px;
+    padding: 40px 20px;
     background-color: #0f0f14;
 }
 
@@ -338,6 +338,7 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
 
 
 
