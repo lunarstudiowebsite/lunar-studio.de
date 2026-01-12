@@ -318,37 +318,6 @@ body {
         display: flex;
     }
 }
-/* EMAIL SHOWCASE */
-.email-showcase {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 40px;
-    align-items: start;
-}
-.container .email-showcase {
-    width: 100%;
-}
-
-}
-
-.email-showcase img {
-    width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-}
-.email-showcase img {
-    background: #08080a;
-    padding: 10px;
-}
-
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .email-showcase {
-        grid-template-columns: 1fr;
-    }
-}
 @media (max-width: 900px) {
     .hero {
         min-height: 100vh;
@@ -361,6 +330,7 @@ body {
         padding-top: 100px;
     }
 }
+
 
 
 
