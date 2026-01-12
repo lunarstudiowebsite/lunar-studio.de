@@ -90,7 +90,6 @@ body {
     align-items: center;
     text-align: center;
     padding: 20px;
-    padding-bottom: 40px;
 }
 
 .hero h1 {
@@ -319,6 +318,7 @@ body {
         display: flex;
     }
 }
+
 
 
 
