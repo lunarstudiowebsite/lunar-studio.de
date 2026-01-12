@@ -83,7 +83,7 @@ body {
 
 /* HERO */
 .hero {
-    height: 80vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -127,7 +127,7 @@ body {
 
 /* SERVICES */
 .services {
-    padding: 80px 20px;
+    padding: 40px 20px;
     background-color: #0f0f14;
 }
 
@@ -318,6 +318,7 @@ body {
         display: flex;
     }
 }
+
 
 
 
