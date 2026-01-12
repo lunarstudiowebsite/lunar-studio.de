@@ -89,7 +89,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
+    padding-bottom: 40px;
 }
 
 .hero h1 {
@@ -104,7 +105,7 @@ body {
 
 /* HERO BUTTON */
 .hero-button {
-    margin-top: 10px;
+    margin-top: 20px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -318,6 +319,7 @@ body {
         display: flex;
     }
 }
+
 
 
 
