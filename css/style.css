@@ -89,12 +89,12 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
 }
 
 .hero h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .hero p {
@@ -104,7 +104,7 @@ body {
 
 /* HERO BUTTON */
 .hero-button {
-    margin-top: 30px;
+    margin-top: 10px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -318,6 +318,7 @@ body {
         display: flex;
     }
 }
+
 
 
 
