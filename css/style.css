@@ -7,11 +7,11 @@
 }
 
 :root {
-    --bg-main: #fdfaf0;
+    --bg-main: ##ffffff;
     --text-main: #4a3a2f;
-    --text-muted: #7a6a5f;
-    --border-light: #e6e1dc;
-    --card-bg: #ffffff;
+    --text-muted: #4a3a2f;
+    --border-light: #4a3a2f;
+    --card-bg: #fffdf5;
 }
 
 /* BODY */
@@ -340,6 +340,7 @@ body {
         padding-top: 100px;
     }
 }
+
 
 
 
