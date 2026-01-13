@@ -7,7 +7,7 @@
 }
 
 :root {
-    --bg-main: #fdfcfa;
+    --bg-main: #fdfaf0;
     --text-main: #4a3a2f;
     --text-muted: #7a6a5f;
     --border-light: #e6e1dc;
@@ -340,6 +340,7 @@ body {
         padding-top: 100px;
     }
 }
+
 
 
 
