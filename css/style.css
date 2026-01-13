@@ -11,7 +11,7 @@
     --text-main: #ffffff;
     --text-muted: #ffffff;
     --border-light: #ffffff;
-    --card-bg: #ffffff;
+    --card-bg: #000000;
 }
 
 /* BODY */
@@ -340,6 +340,7 @@ body {
         padding-top: 100px;
     }
 }
+
 
 
 
