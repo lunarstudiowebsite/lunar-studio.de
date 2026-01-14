@@ -340,6 +340,45 @@ body {
         padding-top: 100px;
     }
 }
+/* FAQ */
+.faq-list {
+    margin-top: 40px;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px 0;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: inherit;
+}
+
+.faq-question::after {
+    content: "+";
+    float: right;
+    font-size: 1.2rem;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+    padding-bottom: 20px;
+    line-height: 1.7;
+}
+
+
 
 
 
