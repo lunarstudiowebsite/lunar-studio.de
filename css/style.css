@@ -88,7 +88,7 @@ body {
 
 /* HERO */
 .hero {
-    height: 80vh;
+    height: 37vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -377,6 +377,7 @@ body {
     padding-bottom: 20px;
     line-height: 1.7;
 }
+
 
 
 
