@@ -250,7 +250,7 @@ body {
 
 .contact-form input,
 .contact-form textarea {
-    background: #fff;
+    background: #000;
     border: 1px solid var(--border-light);
     padding: 15px;
     color: var(--text-main);
@@ -377,6 +377,7 @@ body {
     padding-bottom: 20px;
     line-height: 1.7;
 }
+
 
 
 
