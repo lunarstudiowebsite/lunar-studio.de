@@ -378,46 +378,50 @@ body {
     line-height: 1.7;
 }
 
-/* CHATBOT */
+/* === CHATBOT POPUP === */
 .chatbot {
     position: fixed;
     bottom: 24px;
     right: 24px;
     z-index: 9999;
-    font-family: "Segoe UI", sans-serif;
 }
 
-/* Toggle Button */
+/* Runde Chat-Blase */
 .chatbot-toggle {
     width: 56px;
     height: 56px;
     border-radius: 50%;
     border: none;
-    background: #fff;
-    color: #000;
+    background: #4b2e1f;
+    color: #fdfcfa;
     font-size: 22px;
     cursor: pointer;
     box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
-/* Window */
+/* Chat-Fenster */
 .chatbot-window {
     position: absolute;
     bottom: 70px;
     right: 0;
     width: 320px;
-    background: #fff;
+    background: #fdfcfa;
     border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    display: none;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    display: none; /* WICHTIG */
     flex-direction: column;
     overflow: hidden;
 }
 
+/* Sichtbar-Klasse */
+.chatbot-window.active {
+    display: flex;
+}
+
 /* Header */
 .chatbot-header {
-    background: #fff;
-    color: #000;
+    background: #4b2e1f;
+    color: #fdfcfa;
     padding: 14px 16px;
     display: flex;
     justify-content: space-between;
@@ -428,32 +432,33 @@ body {
 .chatbot-header button {
     background: none;
     border: none;
-    color: #fff;
+    color: #fdfcfa;
     font-size: 20px;
     cursor: pointer;
 }
 
-/* Messages */
+/* Inhalt */
 .chatbot-messages {
     padding: 16px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    color: #000;
+    color: #4b2e1f;
     font-size: 0.9rem;
 }
 
+/* Bot-Nachricht */
 .bot-message {
-    background: #fff;
+    background: #efeae6;
     padding: 10px 12px;
     border-radius: 10px;
 }
 
-/* Options */
+/* Optionen */
 .chat-option {
     background: transparent;
-    border: 1px solid #000;
-    color: #fff;
+    border: 1px solid #4b2e1f;
+    color: #4b2e1f;
     padding: 8px 12px;
     border-radius: 999px;
     cursor: pointer;
@@ -462,8 +467,8 @@ body {
 }
 
 .chat-option:hover {
-    background: #fff;
-    color: #000;
+    background: #4b2e1f;
+    color: #fdfcfa;
 }
 
 /* Footer */
@@ -472,16 +477,8 @@ body {
     border-top: 1px solid #ddd;
 }
 
-.chatbot-cta {
-    display: block;
-    text-align: center;
-    padding: 10px;
-    background: #fff;
-    color: #000;
-    text-decoration: none;
-    border-radius: 999px;
-    font-size: 0.9rem;
-}
+.c
+
 
 
 
