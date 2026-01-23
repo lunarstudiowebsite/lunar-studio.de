@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lunar Studio - Webdesign, Marketing & Corporate Design Agentur</title>
+    <meta name="description" content="Lunar Studio: Ihre Designagentur für professionelles Webdesign, Marketing- und Werbedesign sowie Corporate Design in Oldenburg und dem Oldenburger Land. All-in-One Lösungen für Ihren Markenauftritt.">
+    <meta name="keywords" content="Webdesign Oldenburg, Designagentur Oldenburg, Marketingdesign, Werbedesign, Corporate Design, Logodesign, Webentwicklung, Lunar Studio, Markenauftritt, SEO Oldenburg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, .font-heading { font-family: 'Montserrat', sans-serif; }
+        .modal-overlay { background-color: rgba(0, 0, 0, 0.75); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1a202c; }
+        ::-webkit-scrollbar-thumb { background: #4a5568; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6b7280; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a202c',
+                        secondary: '#e2e8f0',
+                        accent: '#facc15',
+                        darkgray: '#2d3748'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-primary text-secondary antialiased">
+
+    <!-- Header/Hero Section -->
+    <header class="relative h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <div class="absolute inset-0 bg-black opacity-70"></div>
+        <div class="relative z-10 p-8 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6 font-heading">
+                Optik ist nicht alles, doch sie spricht, bevor es Worte tun.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-8">
+                Lunar Studio: Ihre All-in-One Lösung für herausragendes Webdesign, effektives Marketing und ein unverwechselbares Corporate Design. Wir garantieren Zufriedenheit und fokussieren uns voll auf Ihre individuellen Geschäftsbedürfnisse.
+            </p>
+            <a href="#contact" class="bg-accent text-primary hover:bg-yellow-500 transition duration-300 px-8 py-4 rounded-full text-lg font-semibold shadow-lg">
+                Projekt anfragen
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Über Lunar Studio Section -->
+        <section id="about" class="py-16 md:py-24 bg-darkgray text-center">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 font-heading">Über Lunar Studio</h2>
+                <p class="text-lg leading-relaxed text-gray-300 mb-6">
+                    Lunar Studio ist Ihre vertrauenswürdige Designagentur, die sich auf die Schaffung professioneller und wirkungsvoller digitaler und visueller Identitäten spezialisiert hat.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-300">
+                    Wir legen Wert auf Professionalität, Zuverlässigkeit und eine transparente Zusammenarbeit, um sicherzustellen, dass Ihr Unternehmen online und offline glänzt.
+                </p>
+            </div>
+        </section>
+
+        <!-- Leistungen Section -->
+        <section id="services" class="py-16 md:py-24 bg-primary">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12 font-heading">Unsere Leistungen</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-darkgray rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300 cursor-pointer" onclick="openModal('webdesign')">
+                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">Webdesign & -entwicklung</h3>
+                        <p class="text-gray-300">Wir schaffen responsive und intuitive Websites, die Ihre Marke optimal präsentieren und Ihre Kunden begeistern.</p>
+                    </div>
+                    <div class="bg-darkgray rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300 cursor-pointer" onclick="openModal('marketing')">
+                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">Marketing- und Werbedesign</h3>
+                        <p class="text-gray-300">Von Kampagnen bis zu Werbematerialien – wir entwickeln Designs, die Ihre Botschaft klar kommunizieren und Wirkung zeigen.</p>
+                    </div>
+                    <div class="bg-darkgray rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300 cursor-pointer" onclick="openModal('corporate')">
+                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">Corporate Design</h3>
+                        <p class="text-gray-300">Entwickeln Sie eine starke und konsistente Markenidentität, die Ihr Unternehmen einzigartig macht und Vertrauen schafft.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bewertungen Section -->
+        <section id="testimonials" class="py-16 md:py-24 bg-primary">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12 font-heading">Was unsere Kunden sagen</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-darkgray rounded-lg shadow-xl p-6">
+                        <div class="flex mb-4">
+                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
+  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
+           1.48 8.279L12 18.896l-7.416 3.817 
+           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
+</svg>
+                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
+  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
+           1.48 8.279L12 18.896l-7.416 3.817 
+           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
+</svg>
+                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
+  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
+           1.48 8.279L12 18.896l-7.416 3.817 
+           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
+</svg>
+                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
+  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
+           1.48 8.279L12 18.896l-7.416 3.817 
+           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
+</svg>
+                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
+  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
+           1.48 8.279L12 18.896l-7.416 3.817 
+           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
+</svg>
+                        </div>
+                        <p class="text-gray-300 mb-4">Die Zusammenarbeit mit Lunar Studio verlief unkompliziert und reibungslos.</p>
+                        <p class="text-white font-semibold">- Kunde 1</p>
+                    </div>
+                    <div class="bg-darkgray rounded-lg shadow-xl p-6">
+                        <div class="flex mb-4">
+                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
+  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
+           1.48 8.279L12 18.896l-7.416 3.817 
+           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
+</svg>
+                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
+  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
+           1.48 8.279L12 18.896l-7.416 3.817 
+           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
+</svg>
+                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
+  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
+           1.48 8.279L12 18.896l-7.416 3.817 
+           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
+</svg>
+                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
+  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
+           1.48 8.279L12 18.896l-7.416 3.817 
+           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
+</svg>
+                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
+  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
+           1.48 8.279L12 18.896l-7.416 3.817 
+           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
+</svg>
+                        </div>
+                        <p class="text-gray-300 mb-4">Die Zusammenarbeit mit Lunar Studio verlief unkompliziert und reibungslos.</p>
+                        <p class="text-white font-semibold">- Kunde 2</p>
+                    </div>
+                    <div class="bg-darkgray rounded-lg shadow-xl p-6">
+                        <div class="flex mb-4">
+                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
+  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
+           1.48 8.279L12 18.896l-7.416 3.817 
+           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
+</svg>
+                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
+  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
+           1.48 8.279L12 18.896l-7.416 3.817 
+           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
+</svg>
+                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
+  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
+           1.48 8.279L12 18.896l-7.416 3.817 
+           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
+</svg>
+                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
+  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
+           1.48 8.279L12 18.896l-7.416 3.817 
+           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
+</svg>
+                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
+  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
+           1.48 8.279L12 18.896l-7.416 3.817 
+           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
+</svg>
+                        </div>
+                        <p class="text-gray-300 mb-4">Die Zusammenarbeit mit Lunar Studio verlief unkompliziert und reibungslos.</p>
+                        <p class="text-white font-semibold">- Kunde 3</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontakt Section -->
+        <section id="contact" class="py-16 md:py-24 bg-primary">
+            <div class="container mx-auto px-6 max-w-2xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12 font-heading">Kontaktieren Sie uns</h2>
+
+                <!-- ✅ ECHTES FORMSPREE FORMULAR -->
+                <form action="https://formspree.io/f/mnjjanjg" method="POST" class="bg-darkgray p-8 rounded-lg shadow-xl space-y-6">
+                    <label class="block text-gray-300 text-sm font-bold mb-2">
+                        Ihre E-Mail:
+                        <input type="email" name="email" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-200 mt-2" required>
+                    </label>
+                    <label class="block text-gray-300 text-sm font-bold mb-2">
+                        Ihre Nachricht:
+                        <textarea name="message" rows="6" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-200 mt-2" required></textarea>
+                    </label>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="dsgvo" name="dsgvo" class="form-checkbox h-4 w-4 text-accent rounded" required>
+                        <label for="dsgvo" class="ml-2 text-gray-300 text-sm">Ich stimme der Verarbeitung meiner Daten gemäß der <a href="#" class="text-accent hover:underline">Datenschutzerklärung</a> zu.</label>
+                    </div>
+                    <button type="submit" class="bg-accent text-primary hover:bg-yellow-500 transition duration-300 px-8 py-4 rounded-full text-lg font-semibold w-full shadow-lg">
+                        Anfrage abschicken
+                    </button>
+                    <p class="text-center text-gray-400 text-sm mt-4">
+                        Oder senden Sie uns direkt eine E-Mail an:
+                        <a href="mailto:kontakt@lunar-studio.de" class="text-accent hover:underline">kontakt@lunar-studio.de</a>
+                    </p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-darkgray py-8 text-center text-gray-400 text-sm">
+  <div class="container mx-auto px-6">
+    <p>
+      &copy; <span id="yearFooter"></span> Lunar Studio. Alle Rechte vorbehalten. |
+      <a href="impressum.html" class="hover:text-accent">Impressum</a> |
+      <a href="datenschutz.html" class="hover:text-accent">Datenschutz</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+  // Jahreszahl automatisch aktualisieren
+  document.getElementById('yearFooter').textContent = new Date().getFullYear();
+</script>
+
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(a=>{
+          a.addEventListener('click',e=>{
+            e.preventDefault();
+            document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+          });
+        });
+
+        // Modals (gekürzt)
+        function openModal(id){document.getElementById(`modal-${id}`).classList.remove('hidden');document.body.classList.add('overflow-hidden');}
+        function closeModal(id){document.getElementById(`modal-${id}`).classList.add('hidden');document.body.classList.remove('overflow-hidden');}
+    </script>
+</body>
+</html>
