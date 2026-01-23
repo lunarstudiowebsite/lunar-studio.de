@@ -478,6 +478,25 @@ body {
 }
 
 .c
+.chatbot-cta {
+    display: block;
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: #6c63ff; /* Lunar-Farbton – gern anpassen */
+    color: #fff;
+    text-align: center;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.chatbot-cta:hover {
+    background: #574fe1;
+    transform: translateY(-1px);
+}
+
+
 
 
 
