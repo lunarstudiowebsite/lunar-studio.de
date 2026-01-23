@@ -16,3 +16,23 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         link.classList.add('active');
     }
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const chatToggle = document.getElementById("chatToggle");
+    const chatWindow = document.getElementById("chatWindow");
+    const chatClose = document.getElementById("chatClose");
+
+    if (!chatToggle || !chatWindow || !chatClose) {
+        console.warn("Chatbot-Elemente nicht gefunden");
+        return;
+    }
+
+    chatToggle.addEventListener("click", () => {
+        chatWindow.classList.toggle("open");
+    });
+
+    chatClose.addEventListener("click", () => {
+        chatWindow.classList.remove("open");
+    });
+});
+
+
