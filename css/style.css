@@ -414,7 +414,7 @@ body {
 }
 
 /* Sichtbar-Klasse */
-.chatbot-window.active {
+.chatbot-window.open {
     display: flex;
 }
 
@@ -478,6 +478,7 @@ body {
 }
 
 .c
+
 
 
 
