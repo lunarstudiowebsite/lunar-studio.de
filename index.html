@@ -233,6 +233,95 @@
   </div>
 </footer>
 
+                                <!-- Modals for Services -->
+    <div id="modal-webdesign" class="modal-overlay fixed inset-0 flex items-center justify-center p-4 hidden z-50">
+        <div class="bg-darkgray rounded-lg shadow-2xl p-8 max-w-xl w-full relative text-white">
+            <button class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl" onclick="closeModal('webdesign')">&times;</button>
+            <h3 class="text-3xl font-bold text-accent mb-4 font-heading">Webdesign & -entwicklung</h3>
+            <p class="mb-4 text-gray-300">Wir entwickeln maßgeschneiderte Websites, die nicht nur optisch überzeugen, sondern auch technisch auf dem neuesten Stand sind. Von der Konzeption bis zur Live-Schaltung – wir begleiten Sie durch den gesamten Prozess.</p>
+            <h4 class="text-xl font-semibold text-white mb-2 font-heading">Unser Vorgehen:</h4>
+            <ul class="list-none space-y-2 text-gray-300">
+                <li><strong class="text-accent">01 Konzeption:</strong> Analyse Ihrer Ziele und Zielgruppe, Erstellung eines Wireframes und einer Sitemap.</li>
+                <li><strong class="text-accent">02 Design:</strong> Entwicklung eines einzigartigen Designs, das Ihre Marke widerspiegelt und eine intuitive Benutzererfahrung bietet.</li>
+                <li><strong class="text-accent">03 Umsetzung:</strong> Programmierung der Website mit modernen Technologien, responsiver Optimierung und gründlichen Tests.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-marketing" class="modal-overlay fixed inset-0 flex items-center justify-center p-4 hidden z-50">
+        <div class="bg-darkgray rounded-lg shadow-2xl p-8 max-w-xl w-full relative text-white">
+            <button class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl" onclick="closeModal('marketing')">&times;</button>
+            <h3 class="text-3xl font-bold text-accent mb-4 font-heading">Marketing- und Werbedesign</h3>
+            <p class="mb-4 text-gray-300">Effektives Marketing beginnt mit überzeugendem Design. Wir gestalten Werbemittel, die Ihre Botschaft klar transportieren und Ihre Zielgruppe ansprechen – von Social Media Grafiken bis zu Printanzeigen.</p>
+            <h4 class="text-xl font-semibold text-white mb-2 font-heading">Unser Vorgehen:</h4>
+            <ul class="list-none space-y-2 text-gray-300">
+                <li><strong class="text-accent">01 Konzeption:</strong> Definition der Marketingziele, Zielgruppenanalyse und Ideenfindung für Kampagnen.</li>
+                <li><strong class="text-accent">02 Design:</strong> Gestaltung von ansprechenden und wirkungsvollen Werbematerialien, die zur Marke passen.</li>
+                <li><strong class="text-accent">03 Umsetzung:</strong> Erstellung der finalen Designs für digitale und Printmedien, Bereitstellung in den benötigten Formaten.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-corporate" class="modal-overlay fixed inset-0 flex items-center justify-center p-4 hidden z-50">
+        <div class="bg-darkgray rounded-lg shadow-2xl p-8 max-w-xl w-full relative text-white">
+            <button class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl" onclick="closeModal('corporate')">&times;</button>
+            <h3 class="text-3xl font-bold text-accent mb-4 font-heading">Corporate Design</h3>
+            <p class="mb-4 text-gray-300">Ein starkes Corporate Design ist das Fundament jeder erfolgreichen Marke. Wir entwickeln eine kohärente visuelle Identität, die Ihr Unternehmen unverwechselbar macht und Professionalität ausstrahlt.</p>
+            <h4 class="text-xl font-semibold text-white mb-2 font-heading">Unser Vorgehen:</h4>
+            <ul class="list-none space-y-2 text-gray-300">
+                <li><strong class="text-accent">01 Konzeption:</strong> Analyse Ihrer Unternehmenswerte, Vision und Positionierung, Entwicklung von Moodboards.</li>
+                <li><strong class="text-accent">02 Design:</strong> Entwurf von Logo, Farbpalette, Typografie und Bildsprache, die Ihre Markenpersönlichkeit definieren.</li>
+                <li><strong class="text-accent">03 Umsetzung:</strong> Erstellung eines umfassenden Styleguides und Anwendung auf alle relevanten Medien (Visitenkarten, Briefpapier, etc.).</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Modal functionality
+        function openModal(serviceId) {
+            document.getElementById(`modal-${serviceId}`).classList.remove('hidden');
+            document.body.classList.add('overflow-hidden'); // Prevent scrolling body when modal is open
+        }
+
+        function closeModal(serviceId) {
+            document.getElementById(`modal-${serviceId}`).classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // Close modal when clicking outside (on overlay)
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    const serviceId = this.id.replace('modal-', '');
+                    closeModal(serviceId);
+                }
+            });
+        });
+
+        // Close modal with ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay').forEach(overlay => {
+                    if (!overlay.classList.contains('hidden')) {
+                        const serviceId = overlay.id.replace('modal-', '');
+                        closeModal(serviceId);
+                    }
+                });
+            }
+        });
+
+
 <script>
   // Jahreszahl automatisch aktualisieren
   document.getElementById('yearFooter').textContent = new Date().getFullYear();
