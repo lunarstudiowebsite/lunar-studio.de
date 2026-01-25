@@ -243,6 +243,28 @@
           });
         });
 
+         // Modal functionality
+        function openModal(serviceId) {
+            document.getElementById(`modal-${serviceId}`).classList.remove('hidden');
+            document.body.classList.add('overflow-hidden'); // Prevent scrolling body when modal is open
+        }
+
+        function closeModal(serviceId) {
+            document.getElementById(`modal-${serviceId}`).classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // Close modal when clicking outside (on overlay)
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    const serviceId = this.id.replace('modal-', '');
+                    closeModal(serviceId);
+                }
+            });
+        });
+
+
         // Modals (gekürzt)
         function openModal(id){document.getElementById(`modal-${id}`).classList.remove('hidden');document.body.classList.add('overflow-hidden');}
         function closeModal(id){document.getElementById(`modal-${id}`).classList.add('hidden');document.body.classList.remove('overflow-hidden');}
