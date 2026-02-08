@@ -1,375 +1,377 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="scroll-smooth">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lunar Studio - Webdesign, Marketing & Corporate Design Agentur</title>
-    <meta name="description" content="Lunar Studio: Ihre Designagentur für professionelles Webdesign, Marketing- und Werbedesign sowie Corporate Design in Oldenburg und dem Oldenburger Land. All-in-One Lösungen für Ihren Markenauftritt.">
-    <meta name="keywords" content="Webdesign Oldenburg, Designagentur Oldenburg, Marketingdesign, Werbedesign, Corporate Design, Logodesign, Webentwicklung, Lunar Studio, Markenauftritt, SEO Oldenburg">
-    <link rel="icon" href="/favicon.png">
-    <link rel="canonical" href="https://lunar-studio.de/" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar Studio | Webdesign & Marketing Wardenburg</title>
+    <meta name="description" content="Lunar Studio - Individuelles High-End Webdesign inkl. SEO sowie Marketing- und Werbedesign in Wardenburg. Persönliche Betreuung für Ihren digitalen Erfolg.">
+    <meta name="keywords" content="Webdesign Wardenburg, SEO, Marketingdesign, Werbedesign, Lunar Studio, Branding">
+    
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Lunar Studio | Webdesign Wardenburg">
+    <meta property="og:description" content="Exzellentes Webdesign und digitale Strategien für Unternehmen in Wardenburg und Umgebung.">
+    <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
-        body { font-family: 'Open Sans', sans-serif; }
-        h1, h2, h3, .font-heading { font-family: 'Montserrat', sans-serif; }
-        .modal-overlay { background-color: rgba(0, 0, 0, 0.75); }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #1a202c; }
-        ::-webkit-scrollbar-thumb { background: #4a5568; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #6b7280; }
-    </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1a202c',
-                        secondary: '#e2e8f0',
-                        accent: '#facc15',
-                        darkgray: '#2d3748'
-                    }
-                }
-            }
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Calendly Badge-Widget Beginn -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script type="text/javascript">
+        window.onload = function() { 
+            Calendly.initBadgeWidget({ 
+                url: 'https://calendly.com/kontakt-lunar-studio/30min', 
+                text: 'Kostenloses Gespräch vereinbaren!', 
+                color: '#ffffff', 
+                textColor: '#1a1a1a', 
+                branding: false 
+            }); 
+            lucide.createIcons();
         }
     </script>
+    <!-- Calendly Badge-Widget Ende -->
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #09090b; /* zinc-950 */
+            color: #f4f4f5; /* zinc-100 */
+        }
+        .glass-nav {
+            background: rgba(9, 9, 11, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(39, 39, 42, 1);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #ffffff, #a1a1aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .calendly-badge-widget {
+            right: 20px !important;
+            bottom: 20px !important;
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 600 !important;
+        }
+    </style>
 </head>
-<body class="bg-primary text-secondary antialiased">
+<body class="selection:bg-zinc-100 selection:text-zinc-950">
 
-    <!-- Header/Hero Section -->
-    <header class="relative h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-        <div class="absolute inset-0 bg-black opacity-70"></div>
-        <div class="relative z-10 p-8 max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6 font-heading">
-                Optik ist nicht alles, doch sie spricht, bevor es Worte tun.
-            </h1>
-            <p class="text-lg md:text-xl text-gray-200 mb-8">
-                Lunar Studio: Ihre All-in-One Lösung für herausragendes Webdesign, effektives Marketing und ein unverwechselbares Corporate Design. Wir garantieren Zufriedenheit und fokussieren uns voll auf Ihre individuellen Geschäftsbedürfnisse.
-            </p>
-            <a href="#contact" class="bg-accent text-primary hover:bg-yellow-500 transition duration-300 px-8 py-4 rounded-full text-lg font-semibold shadow-lg">
-                Projekt anfragen
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" onclick="showPage('home')" class="text-2xl font-bold tracking-tighter flex items-center gap-2">
+                <i data-lucide="moon" class="w-6 h-6"></i>
+                LUNAR <span class="font-light text-zinc-500">STUDIO</span>
             </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#about" onclick="showPage('home')" class="hover:text-white transition-colors">Über mich</a>
+                <a href="#services" onclick="showPage('home')" class="hover:text-white transition-colors">Leistungen</a>
+                <a href="#testimonials" onclick="showPage('home')" class="hover:text-white transition-colors">Rezensionen</a>
+                <a href="#contact" onclick="showPage('home')" class="bg-zinc-100 text-zinc-950 px-5 py-2 rounded-full hover:bg-white transition-all text-xs uppercase tracking-widest font-bold">Projekt anfragen</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="md:hidden p-2" id="mobile-menu-btn">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
         </div>
-    </header>
 
-    <main>
-        <!-- Über Lunar Studio Section -->
-        <section id="about" class="py-16 md:py-24 bg-darkgray text-center">
-            <div class="container mx-auto px-6 max-w-3xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 font-heading">Über Lunar Studio</h2>
-                <p class="text-lg leading-relaxed text-gray-300 mb-6">
-                    Lunar Studio ist Ihre vertrauenswürdige Designagentur, die sich auf die Schaffung professioneller und wirkungsvoller digitaler und visueller Identitäten spezialisiert hat.
-                </p>
-                <p class="text-lg leading-relaxed text-gray-300">
-                    Wir legen Wert auf Professionalität, Zuverlässigkeit und eine transparente Zusammenarbeit, um sicherzustellen, dass Ihr Unternehmen online und offline glänzt.
-                </p>
-            </div>
-        </section>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-zinc-950 border-b border-zinc-800 p-6 flex flex-col gap-6 text-lg">
+            <a href="#about" onclick="toggleMenu(); showPage('home')">Über mich</a>
+            <a href="#services" onclick="toggleMenu(); showPage('home')">Leistungen</a>
+            <a href="#testimonials" onclick="toggleMenu(); showPage('home')">Rezensionen</a>
+            <a href="#contact" onclick="toggleMenu(); showPage('home')" class="text-zinc-400">Kontakt</a>
+        </div>
+    </nav>
 
-        <!-- Leistungen Section -->
-                <section id="services" class="py-16 md:py-24 bg-primary">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12 font-heading">
-                    Unsere Leistungen
-                </h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Service Card 1 -->
-                    <div class="bg-darkgray rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300 cursor-pointer" onclick="openModal('webdesign')">
-                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">Webdesign & -entwicklung</h3>
-                        <p class="text-gray-300">Wir schaffen responsive und intuitive Websites, die Ihre Marke optimal präsentieren und Ihre Kunden begeistern.</p>
-                    </div>
-                    <!-- Service Card 2 -->
-                    <div class="bg-darkgray rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300 cursor-pointer" onclick="openModal('marketing')">
-                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">Marketing- und Werbedesign</h3>
-                        <p class="text-gray-300">Von Kampagnen bis zu Werbematerialien – wir entwickeln Designs, die Ihre Botschaft klar kommunizieren und Wirkung zeigen.</p>
-                    </div>
-                    <!-- Service Card 3 -->
-                    <div class="bg-darkgray rounded-lg shadow-xl p-8 transform hover:scale-105 transition duration-300 cursor-pointer" onclick="openModal('corporate')">
-                        <h3 class="text-2xl font-bold text-white mb-4 font-heading">Corporate Design</h3>
-                        <p class="text-gray-300">Entwickeln Sie eine starke und konsistente Markenidentität, die Ihr Unternehmen einzigartig macht und Vertrauen schafft.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bewertungen Section -->
-        <section id="testimonials" class="py-16 md:py-24 bg-primary">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12 font-heading">Was unsere Kunden sagen</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-darkgray rounded-lg shadow-xl p-6">
-                        <div class="flex mb-4">
-                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
-  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
-           1.48 8.279L12 18.896l-7.416 3.817 
-           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
-</svg>
-                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
-  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
-           1.48 8.279L12 18.896l-7.416 3.817 
-           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
-</svg>
-                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
-  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
-           1.48 8.279L12 18.896l-7.416 3.817 
-           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
-</svg>
-                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
-  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
-           1.48 8.279L12 18.896l-7.416 3.817 
-           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
-</svg>
-                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
-  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
-           1.48 8.279L12 18.896l-7.416 3.817 
-           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
-</svg>
-                        </div>
-                        <p class="text-gray-300 mb-4">Danke für diese tolle Zusammenarbeit - die Erstellung meiner Webseite und meines Google Unternehmensprofils. Ist auf jeden Fall weiterzuempfehlen.</p>
-                        <p class="text-white font-semibold">- Florian Nauendorff</p>
-                    </div>
-                    <div class="bg-darkgray rounded-lg shadow-xl p-6">
-                        <div class="flex mb-4">
-                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
-  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
-           1.48 8.279L12 18.896l-7.416 3.817 
-           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
-</svg>
-                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
-  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
-           1.48 8.279L12 18.896l-7.416 3.817 
-           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
-</svg>
-                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
-  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
-           1.48 8.279L12 18.896l-7.416 3.817 
-           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
-</svg>
-                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
-  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
-           1.48 8.279L12 18.896l-7.416 3.817 
-           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
-</svg>
-                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
-  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
-           1.48 8.279L12 18.896l-7.416 3.817 
-           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
-</svg>
-                        </div>
-                        <p class="text-gray-300 mb-4">Die Zusammenarbeit mit Lunar Studio verlief unkompliziert und reibungslos.</p>
-                        <p class="text-white font-semibold">- Kunde 2</p>
-                    </div>
-                    <div class="bg-darkgray rounded-lg shadow-xl p-6">
-                        <div class="flex mb-4">
-                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
-  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
-           1.48 8.279L12 18.896l-7.416 3.817 
-           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
-</svg>
-                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
-  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
-           1.48 8.279L12 18.896l-7.416 3.817 
-           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
-</svg>
-                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
-  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
-           1.48 8.279L12 18.896l-7.416 3.817 
-           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
-</svg>
-                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
-  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
-           1.48 8.279L12 18.896l-7.416 3.817 
-           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
-</svg>
-                            <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 ..."/></<svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 24 24">
-  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 
-           1.48 8.279L12 18.896l-7.416 3.817 
-           1.48-8.279L.001 9.306l8.332-1.151L12 .587z"/>
-</svg>
-                        </div>
-                        <p class="text-gray-300 mb-4">Die Zusammenarbeit mit Lunar Studio verlief unkompliziert und reibungslos.</p>
-                        <p class="text-white font-semibold">- Kunde 3</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Kontakt Section -->
-        <section id="contact" class="py-16 md:py-24 bg-primary">
-            <div class="container mx-auto px-6 max-w-2xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12 font-heading">Kontaktieren Sie uns</h2>
-
-                <!-- ✅ ECHTES FORMSPREE FORMULAR -->
-                <form action="https://formspree.io/f/mnjjanjg" method="POST" class="bg-darkgray p-8 rounded-lg shadow-xl space-y-6">
-                    <label class="block text-gray-300 text-sm font-bold mb-2">
-                        Ihre E-Mail:
-                        <input type="email" name="email" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-200 mt-2" required>
-                    </label>
-                    <label class="block text-gray-300 text-sm font-bold mb-2">
-                        Ihre Nachricht:
-                        <textarea name="message" rows="6" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-200 mt-2" required></textarea>
-                    </label>
-                    <div class="flex items-center">
-                        <input type="checkbox" id="dsgvo" name="dsgvo" class="form-checkbox h-4 w-4 text-accent rounded" required>
-                        <label for="dsgvo" class="ml-2 text-gray-300 text-sm">Ich stimme der Verarbeitung meiner Daten gemäß der <a href="#" class="text-accent hover:underline">Datenschutzerklärung</a> zu.</label>
-                    </div>
-                    <button type="submit" class="bg-accent text-primary hover:bg-yellow-500 transition duration-300 px-8 py-4 rounded-full text-lg font-semibold w-full shadow-lg">
-                        Anfrage abschicken
-                    </button>
-                    <p class="text-center text-gray-400 text-sm mt-4">
-                        Oder senden Sie uns direkt eine E-Mail an:
-                        <a href="mailto:kontakt@lunar-studio.de" class="text-accent hover:underline">kontakt@lunar-studio.de</a>
+    <main id="content-area">
+        <!-- HOME PAGE -->
+        <div id="page-home" class="page-content">
+            <!-- Hero -->
+            <section class="pt-40 pb-20 px-6 text-zinc-100">
+                <div class="max-w-7xl mx-auto text-center">
+                    <span class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase border border-zinc-800 rounded-full text-zinc-400">
+                        Individuelle Lösungen für Oldenburg und das Oldenburger Land
+                    </span>
+                    <h1 class="text-5xl md:text-8xl font-bold tracking-tight mb-8 gradient-text leading-[1.1]">
+                        Digitale Exzellenz für <br> deinen Erfolg.
+                    </h1>
+                    <p class="max-w-3xl mx-auto text-zinc-400 text-lg md:text-xl mb-12 font-light leading-relaxed">
+                        Ich entwickle für dich maßgeschneiderte High-End <span class="text-zinc-100">Webseiten</span>, verkaufsstarkes <span class="text-zinc-100">Werbedesign</span> und eine unverwechselbare <span class="text-zinc-100">Corporate Identity</span>. Mit einer klaren Strategie mache ich deine Marke im digitalen Raum sichtbar und erfolgreich.
                     </p>
-                </form>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+                        <a href="#contact" class="w-full md:w-auto px-10 py-4 bg-zinc-100 text-zinc-950 font-bold rounded-xl hover:scale-105 transition-transform">Projekt anfragen</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Über mich -->
+            <section id="about" class="py-24 px-6 bg-zinc-950">
+                <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center text-zinc-100">
+                    <div>
+                        <h2 class="text-3xl md:text-5xl font-bold mb-8">Ich verstehe Webdesign als Handwerk.</h2>
+                        <p class="text-zinc-400 text-lg mb-6 leading-relaxed">
+                            Ich biete keine Vorlagen "von der Stange". Jedes Projekt beginnt für mich mit einer tiefgreifenden Analyse deiner Ziele. 
+                        </p>
+                        <p class="text-zinc-400 text-lg mb-8 leading-relaxed">
+                            Ob es um die Erstellung deiner modernen Corporate Identity oder die präzise Umsetzung deiner Webseite inkl. SEO und Marketingdesign geht – ich verbinde Ästhetik mit technischer Performance.
+                        </p>
+                        <div class="flex gap-8">
+                            <div>
+                                <div class="text-3xl font-bold text-white">5.0</div>
+                                <div class="text-zinc-500 text-sm">Sterne Bewertung</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-white">100%</div>
+                                <div class="text-zinc-500 text-sm">Leidenschaft</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <div class="h-48 rounded-2xl bg-zinc-900 border border-zinc-800 p-6 flex flex-col justify-end">
+                                <i data-lucide="award" class="mb-auto text-zinc-400 w-6 h-6"></i>
+                                <h3 class="font-bold">Qualität</h3>
+                            </div>
+                            <div class="h-64 rounded-2xl bg-zinc-100 p-6 text-zinc-950 flex flex-col justify-end">
+                                <h3 class="font-bold uppercase text-xs tracking-widest mb-2 text-zinc-500">Standort</h3>
+                                <h3 class="font-bold text-xl text-zinc-900">Wardenburg</h3>
+                            </div>
+                        </div>
+                        <div class="space-y-4 pt-8">
+                            <div class="h-64 rounded-2xl border border-zinc-800 bg-zinc-900 p-6 flex flex-col justify-end">
+                                <i data-lucide="zap" class="mb-auto text-zinc-400 w-6 h-6"></i>
+                                <h3 class="font-bold">Performance</h3>
+                            </div>
+                            <div class="h-48 rounded-2xl bg-zinc-900 border border-zinc-800 p-6 flex flex-col justify-end">
+                                <i data-lucide="target" class="mb-auto text-zinc-400 w-6 h-6"></i>
+                                <h3 class="font-bold">Strategie</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Leistungen -->
+            <section id="services" class="py-24 px-6 bg-zinc-950">
+                <div class="max-w-7xl mx-auto">
+                    <div class="mb-16">
+                        <h2 class="text-4xl font-bold mb-4 text-zinc-100">Digitale Lösungen.</h2>
+                        <p class="text-zinc-500">Ganzheitliche Betreuung für deinen Online-Auftritt.</p>
+                    </div>
+                    <div class="grid md:grid-cols-4 gap-4 text-zinc-100">
+                        <div class="p-6 h-64 flex flex-col justify-end rounded-2xl border border-zinc-800 bg-zinc-900 group">
+                            <i data-lucide="layout" class="mb-auto text-zinc-400 group-hover:text-white transition-colors w-6 h-6"></i>
+                            <h3 class="text-lg font-bold mb-2">Premium Webdesign</h3>
+                            <p class="text-zinc-500 text-xs leading-relaxed">Individuelle Webseiten mit Fokus auf UX/UI.</p>
+                        </div>
+                        <div class="p-6 h-64 flex flex-col justify-end rounded-2xl border border-zinc-800 bg-zinc-900 group">
+                            <i data-lucide="search" class="mb-auto text-zinc-400 group-hover:text-white transition-colors w-6 h-6"></i>
+                            <h3 class="text-lg font-bold mb-2">SEO</h3>
+                            <p class="text-zinc-500 text-xs leading-relaxed">Sichtbarkeit bei Google & Co.</p>
+                        </div>
+                        <div class="p-6 h-64 flex flex-col justify-end rounded-2xl border border-zinc-800 bg-zinc-900 group">
+                            <i data-lucide="map-pin" class="mb-auto text-zinc-400 group-hover:text-white transition-colors w-6 h-6"></i>
+                            <h3 class="text-lg font-bold mb-2">Google Profil</h3>
+                            <p class="text-zinc-500 text-xs leading-relaxed">Lokales SEO für Wardenburg.</p>
+                        </div>
+                        <div class="p-6 h-64 flex flex-col justify-end rounded-2xl border border-zinc-800 bg-zinc-900 group">
+                            <i data-lucide="pen-tool" class="mb-auto text-zinc-400 group-hover:text-white transition-colors w-6 h-6"></i>
+                            <h3 class="text-lg font-bold mb-2">Branding</h3>
+                            <p class="text-zinc-500 text-xs leading-relaxed">Logos & Corporate Identity.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section id="testimonials" class="py-24 px-6 bg-zinc-950">
+                <div class="max-w-7xl mx-auto">
+                    <h2 class="text-4xl font-bold mb-16 text-center text-zinc-100">Referenzen</h2>
+                    <div class="grid md:grid-cols-2 gap-12 text-left">
+                        <div class="space-y-6 border-l border-zinc-800 pl-8 group">
+                            <div class="flex gap-1 text-white">
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                            <p class="text-zinc-400 text-lg leading-relaxed">"Die Zusammenarbeit mit Lunar Studio war ein voller Erfolg. Unsere neue Webseite übertrifft alle Erwartungen."</p>
+                            <p class="font-bold text-sm tracking-widest uppercase text-zinc-500">— Florian Nauendorff</p>
+                        </div>
+                        <div class="space-y-6 border-l border-zinc-800 pl-8 group">
+                            <div class="flex gap-1 text-white">
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                            <p class="text-zinc-400 text-lg leading-relaxed">"Kompetent, schnell und mit einem Auge für das Detail. Absolut empfehlenswert!"</p>
+                            <p class="font-bold text-sm tracking-widest uppercase text-zinc-500">— Tobias Pralle</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kontakt -->
+            <section id="contact" class="py-24 px-6 bg-zinc-950">
+                <div class="max-w-3xl mx-auto border border-zinc-800 rounded-3xl p-8 md:p-12 bg-zinc-900/20 text-zinc-100">
+                    <h2 class="text-3xl font-bold mb-4">Projekt anfragen.</h2>
+                    <p class="text-zinc-500 mb-8">Schreib mir einfach eine Nachricht. Ich melde mich zeitnah bei dir.</p>
+                    <form action="https://formspree.io/f/mnjjanjg" method="POST" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <input type="text" name="name" placeholder="Dein Name" required class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 focus:border-white transition-colors">
+                            <input type="email" name="email" placeholder="deine@email.de" required class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 focus:border-white transition-colors">
+                        </div>
+                        <input type="text" name="subject" placeholder="Betreff" required class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 focus:border-white transition-colors">
+                        <textarea name="message" rows="4" placeholder="Deine Nachricht..." required class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 focus:border-white transition-colors"></textarea>
+                        
+                        <div class="flex items-start gap-3">
+                            <div class="flex items-center h-5">
+                                <input id="privacy-policy" name="privacy-policy" type="checkbox" required class="w-4 h-4 bg-zinc-900 border-zinc-800 rounded focus:ring-zinc-100 text-zinc-100 cursor-pointer">
+                            </div>
+                            <label for="privacy-policy" class="text-sm text-zinc-500 cursor-pointer">
+                                Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung deiner Anfrage gelöscht. Hinweis: Du kannst deine Einwilligung jederzeit für die Zukunft per E-Mail an [E-Mail-Adresse] widerrufen. Detaillierte Informationen findest du in meiner 
+                                <a href="#" onclick="showPage('datenschutz')" class="text-zinc-300 underline hover:text-white transition-colors">Datenschutzerklärung</a>.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-zinc-100 text-zinc-950 font-bold rounded-xl hover:bg-white transition-all">Anfrage senden</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <!-- IMPRESSUM PAGE -->
+        <div id="page-impressum" class="page-content hidden pt-32 pb-20 px-6 max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold mb-12 text-white">Impressum</h1>
+            <div class="space-y-8 text-zinc-400 leading-relaxed">
+                <section>
+                    <h2 class="text-xl text-white font-bold mb-3">Angaben gemäß § 5 TMG</h2>
+                    <p class="text-lg">
+                        Lunar Studio<br>
+                        [Vorname Nachname]<br>
+                        Korsorsstraße [Hausnummer]<br>
+                        26203 Wardenburg
+                    </p>
+                </section>
+                <section>
+                    <h2 class="text-xl text-white font-bold mb-3">Kontakt</h2>
+                    <p>Telefon: [Telefonnummer]<br>E-Mail: [E-Mail-Adresse]<br>Website: www.lunar-studio.de</p>
+                </section>
+                <section>
+                    <h2 class="text-xl text-white font-bold mb-3">Redaktionell verantwortlich</h2>
+                    <p>[Vorname Nachname]<br>Korsorsstraße [Hausnummer]<br>26203 Wardenburg</p>
+                </section>
+                <p class="pt-8 border-t border-zinc-800"><a href="#" onclick="showPage('home')" class="text-white flex items-center gap-2 hover:underline"><i data-lucide="arrow-left" class="w-4 h-4"></i> Zurück zur Startseite</a></p>
             </div>
-        </section>
+        </div>
+
+        <!-- DATENSCHUTZ PAGE -->
+        <div id="page-datenschutz" class="page-content hidden pt-32 pb-20 px-6 max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold mb-12 text-white">Datenschutzerklärung</h1>
+            <div class="space-y-8 text-zinc-400 leading-relaxed text-sm">
+                <section>
+                    <h2 class="text-xl text-white font-bold mb-3">1. Datenschutz auf einen glance</h2>
+                    <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit deinen personenbezogenen Daten passiert, wenn du diese Website besuchst.</p>
+                </section>
+                <section>
+                    <h2 class="text-xl text-white font-bold mb-3">2. Hosting</h2>
+                    <p>Ich hoste die Inhalte meiner Website bei folgendem Anbieter:</p>
+                    <p class="text-white font-semibold">[Name & Anschrift deines Hosters]</p>
+                </section>
+                <section>
+                    <h2 class="text-xl text-white font-bold mb-3">3. Terminvereinbarung über Calendly</h2>
+                    <p>Auf meiner Website besteht die Möglichkeit, Termine für Erstberatungen über den Dienst <strong>Calendly</strong> zu vereinbaren.</p>
+                    <p>Anbieter ist die Calendly LLC, 271 17th St NW, 10th Floor, Atlanta, Georgia 30363, USA. Weitere Informationen findest du in den Datenschutzbestimmungen von Calendly.</p>
+                </section>
+                <section>
+                    <h2 class="text-xl text-white font-bold mb-3">4. Datenerfassung via Kontaktformular</h2>
+                    <p>Ich nutze den Dienst <strong>Formspree</strong> zur Übermittlung der Formulardaten. Die Datenverarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.</p>
+                </section>
+                <section>
+                    <h2 class="text-xl text-white font-bold mb-3">5. Deine Rechte</h2>
+                    <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung und Widerspruch.</p>
+                </section>
+                <p class="pt-8 border-t border-zinc-800"><a href="#" onclick="showPage('home')" class="text-white flex items-center gap-2 hover:underline"><i data-lucide="arrow-left" class="w-4 h-4"></i> Zurück zur Startseite</a></p>
+            </div>
+        </div>
     </main>
 
-                                <!-- Calendly Badge-Widget Beginn -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/kontakt-lunar-studio/30min', text: 'TERMIN VEREINBAREN', color: '#ffffff', textColor: '#1a1a1a', branding: true }); }</script>
-<!-- Calendly Badge-Widget Ende -->
-                                
-    <footer class="bg-darkgray py-8 text-center text-gray-400 text-sm">
-  <div class="container mx-auto px-6">
-    <p>
-      &copy; <span id="yearFooter"></span> Lunar Studio. Alle Rechte vorbehalten. |
-      <a href="impressum.html" class="hover:text-accent">Impressum</a> |
-      <a href="datenschutz.html" class="hover:text-accent">Datenschutz</a>
-    </p>
-  </div>
-</footer>
-
-                                <!-- Modals for Services -->
-    <div id="modal-webdesign" class="modal-overlay fixed inset-0 flex items-center justify-center p-4 hidden z-50">
-        <div class="bg-darkgray rounded-lg shadow-2xl p-8 max-w-xl w-full relative text-white">
-            <button class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl" onclick="closeModal('webdesign')">&times;</button>
-            <h3 class="text-3xl font-bold text-accent mb-4 font-heading">Webdesign & -entwicklung</h3>
-            <p class="mb-4 text-gray-300">Wir entwickeln maßgeschneiderte Websites, die nicht nur optisch überzeugen, sondern auch technisch auf dem neuesten Stand sind. Von der Konzeption bis zur Live-Schaltung – wir begleiten Sie durch den gesamten Prozess.</p>
-            <h4 class="text-xl font-semibold text-white mb-2 font-heading">Unser Vorgehen:</h4>
-            <ul class="list-none space-y-2 text-gray-300">
-                <li><strong class="text-accent">01 Konzeption:</strong> Analyse Ihrer Ziele und Zielgruppe, Erstellung eines Wireframes und einer Sitemap.</li>
-                <li><strong class="text-accent">02 Design:</strong> Entwicklung eines einzigartigen Designs, das Ihre Marke widerspiegelt und eine intuitive Benutzererfahrung bietet.</li>
-                <li><strong class="text-accent">03 Umsetzung:</strong> Programmierung der Website mit modernen Technologien, responsiver Optimierung und gründlichen Tests.</li>
-            </ul>
+    <!-- Footer -->
+    <footer class="border-t border-zinc-800 pt-20 pb-10 px-6 bg-zinc-950">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-2">
+                    <a href="#" onclick="showPage('home')" class="text-xl font-bold tracking-tighter flex items-center gap-2 mb-6">
+                        <i data-lucide="moon" class="w-5 h-5"></i>
+                        LUNAR STUDIO
+                    </a>
+                    <p class="text-zinc-500 max-w-sm">Webseiten und Branding für Oldenburg und das Oldenburger Land.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 text-white text-sm">Rechtliches</h4>
+                    <ul class="space-y-4 text-zinc-500 text-sm">
+                        <li><a href="#" onclick="showPage('impressum')" class="hover:text-white transition-colors">Impressum</a></li>
+                        <li><a href="#" onclick="showPage('datenschutz')" class="hover:text-white transition-colors">Datenschutz</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 text-white text-sm">Social</h4>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/lunarstudio.de/" target="_blank" class="p-2 border border-zinc-800 rounded-full hover:bg-zinc-800 transition-colors text-zinc-500 hover:text-white" title="Instagram">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-zinc-900 flex justify-between items-center text-xs text-zinc-600">
+                <p>&copy; 2026 Lunar Studio</p>
+                <p>Webdesign aus Wardenburg</p>
+            </div>
         </div>
-    </div>
-
-    <div id="modal-marketing" class="modal-overlay fixed inset-0 flex items-center justify-center p-4 hidden z-50">
-        <div class="bg-darkgray rounded-lg shadow-2xl p-8 max-w-xl w-full relative text-white">
-            <button class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl" onclick="closeModal('marketing')">&times;</button>
-            <h3 class="text-3xl font-bold text-accent mb-4 font-heading">Marketing- und Werbedesign</h3>
-            <p class="mb-4 text-gray-300">Effektives Marketing beginnt mit überzeugendem Design. Wir gestalten Werbemittel, die Ihre Botschaft klar transportieren und Ihre Zielgruppe ansprechen – von Social Media Grafiken bis zu Printanzeigen.</p>
-            <h4 class="text-xl font-semibold text-white mb-2 font-heading">Unser Vorgehen:</h4>
-            <ul class="list-none space-y-2 text-gray-300">
-                <li><strong class="text-accent">01 Konzeption:</strong> Definition der Marketingziele, Zielgruppenanalyse und Ideenfindung für Kampagnen.</li>
-                <li><strong class="text-accent">02 Design:</strong> Gestaltung von ansprechenden und wirkungsvollen Werbematerialien, die zur Marke passen.</li>
-                <li><strong class="text-accent">03 Umsetzung:</strong> Erstellung der finalen Designs für digitale und Printmedien, Bereitstellung in den benötigten Formaten.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="modal-corporate" class="modal-overlay fixed inset-0 flex items-center justify-center p-4 hidden z-50">
-        <div class="bg-darkgray rounded-lg shadow-2xl p-8 max-w-xl w-full relative text-white">
-            <button class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl" onclick="closeModal('corporate')">&times;</button>
-            <h3 class="text-3xl font-bold text-accent mb-4 font-heading">Corporate Design</h3>
-            <p class="mb-4 text-gray-300">Ein starkes Corporate Design ist das Fundament jeder erfolgreichen Marke. Wir entwickeln eine kohärente visuelle Identität, die Ihr Unternehmen unverwechselbar macht und Professionalität ausstrahlt.</p>
-            <h4 class="text-xl font-semibold text-white mb-2 font-heading">Unser Vorgehen:</h4>
-            <ul class="list-none space-y-2 text-gray-300">
-                <li><strong class="text-accent">01 Konzeption:</strong> Analyse Ihrer Unternehmenswerte, Vision und Positionierung, Entwicklung von Moodboards.</li>
-                <li><strong class="text-accent">02 Design:</strong> Entwurf von Logo, Farbpalette, Typografie und Bildsprache, die Ihre Markenpersönlichkeit definieren.</li>
-                <li><strong class="text-accent">03 Umsetzung:</strong> Erstellung eines umfassenden Styleguides und Anwendung auf alle relevanten Medien (Visitenkarten, Briefpapier, etc.).</li>
-            </ul>
-        </div>
-    </div>
+    </footer>
 
     <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
 
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Modal functionality
-        function openModal(serviceId) {
-            document.getElementById(`modal-${serviceId}`).classList.remove('hidden');
-            document.body.classList.add('overflow-hidden'); // Prevent scrolling body when modal is open
-        }
-
-        function closeModal(serviceId) {
-            document.getElementById(`modal-${serviceId}`).classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
-        }
-
-        // Close modal when clicking outside (on overlay)
-        document.querySelectorAll('.modal-overlay').forEach(overlay => {
-            overlay.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    const serviceId = this.id.replace('modal-', '');
-                    closeModal(serviceId);
-                }
-            });
-        });
-
-        // Close modal with ESC key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.modal-overlay').forEach(overlay => {
-                    if (!overlay.classList.contains('hidden')) {
-                        const serviceId = overlay.id.replace('modal-', '');
-                        closeModal(serviceId);
-                    }
-                });
+        function toggleMenu() {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.setAttribute('data-lucide', 'x');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
             }
-        });
-
-
-<script>
-  // Jahreszahl automatisch aktualisieren
-  document.getElementById('yearFooter').textContent = new Date().getFullYear();
-</script>
-
-
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(a=>{
-          a.addEventListener('click',e=>{
-            e.preventDefault();
-            document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
-          });
-        });
-
-         // Modal functionality
-        function openModal(serviceId) {
-            document.getElementById(`modal-${serviceId}`).classList.remove('hidden');
-            document.body.classList.add('overflow-hidden'); // Prevent scrolling body when modal is open
+            lucide.createIcons();
         }
 
-        function closeModal(serviceId) {
-            document.getElementById(`modal-${serviceId}`).classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', toggleMenu);
         }
 
-        // Close modal when clicking outside (on overlay)
-        document.querySelectorAll('.modal-overlay').forEach(overlay => {
-            overlay.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    const serviceId = this.id.replace('modal-', '');
-                    closeModal(serviceId);
-                }
-            });
-        });
-
-
-        // Modals (gekürzt)
-        function openModal(id){document.getElementById(`modal-${id}`).classList.remove('hidden');document.body.classList.add('overflow-hidden');}
-        function closeModal(id){document.getElementById(`modal-${id}`).classList.add('hidden');document.body.classList.remove('overflow-hidden');}
+        function showPage(pageId) {
+            document.querySelectorAll('.page-content').forEach(p => p.classList.add('hidden'));
+            const target = document.getElementById('page-' + pageId);
+            if(target) {
+                target.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'instant' });
+            }
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) toggleMenu();
+        }
     </script>
 </body>
 </html>
