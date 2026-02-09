@@ -24,7 +24,7 @@
         window.onload = function() { 
             Calendly.initBadgeWidget({ 
                 url: 'https://calendly.com/kontakt-lunar-studio/30min', 
-                text: 'Kostenloses Gespräch vereinbaren!', 
+                text: 'Kostenloses Gespräch!', 
                 color: '#ffffff', 
                 textColor: '#1a1a1a', 
                 branding: false 
@@ -51,11 +51,42 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        /* Calendly Adjustment to make room for Chatbot */
         .calendly-badge-widget {
-            right: 20px !important;
+            right: 90px !important; 
             bottom: 20px !important;
             font-family: 'Inter', sans-serif !important;
             font-weight: 600 !important;
+        }
+        @media (max-width: 640px) {
+            .calendly-badge-widget {
+                display: none !important; 
+            }
+        }
+
+        /* Chat Widget Styles */
+        #chat-window {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .chat-bubble-user {
+            background-color: #27272a; /* zinc-800 */
+            border-radius: 18px 18px 2px 18px;
+        }
+        .chat-bubble-bot {
+            background-color: #18181b; /* zinc-900 */
+            border: 1px solid #27272a;
+            border-radius: 18px 18px 18px 2px;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -95,7 +126,7 @@
     <main id="content-area">
         <!-- HOME PAGE -->
         <div id="page-home" class="page-content">
-            <!-- Hero -->
+            <!-- Hero Section -->
             <section class="pt-40 pb-20 px-6 text-zinc-100">
                 <div class="max-w-7xl mx-auto text-center">
                     <span class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase border border-zinc-800 rounded-full text-zinc-400">
@@ -105,7 +136,7 @@
                         Digitale Exzellenz für <br> deinen Erfolg.
                     </h1>
                     <p class="max-w-3xl mx-auto text-zinc-400 text-lg md:text-xl mb-12 font-light leading-relaxed">
-                        Ich entwickle für dich maßgeschneiderte High-End <span class="text-zinc-100">Webseiten</span>, verkaufsstarkes <span class="text-zinc-100">Werbedesign</span> und eine unverwechselbare <span class="text-zinc-100">Corporate Identity</span>. Mit einer klaren Strategie mache ich deine Marke im digitalen Raum sichtbar und erfolgreich.
+                        Ich entwickle für dich maßgeschneiderte High-End <span class="text-zinc-100">Webseiten</span>, verkaufsstarkes <span class="text-zinc-100">Werbedesign</span> und eine unverwechselbare <span class="text-zinc-100">Corporate Identity</span>.
                     </p>
                     <div class="flex flex-col md:flex-row items-center justify-center gap-4">
                         <a href="#contact" class="w-full md:w-auto px-10 py-4 bg-zinc-100 text-zinc-950 font-bold rounded-xl hover:scale-105 transition-transform">Projekt anfragen</a>
@@ -113,27 +144,17 @@
                 </div>
             </section>
 
-            <!-- Über mich -->
+            <!-- Über mich (Wiederhergestellt) -->
             <section id="about" class="py-24 px-6 bg-zinc-950">
                 <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center text-zinc-100">
                     <div>
-                        <h2 class="text-3xl md:text-5xl font-bold mb-8">Ich verstehe Webdesign als Handwerk.</h2>
+                        <h2 class="text-3xl md:text-5xl font-bold mb-8 text-white">Ich verstehe Webdesign als Handwerk.</h2>
                         <p class="text-zinc-400 text-lg mb-6 leading-relaxed">
                             Ich biete keine Vorlagen "von der Stange". Jedes Projekt beginnt für mich mit einer tiefgreifenden Analyse deiner Ziele. 
                         </p>
                         <p class="text-zinc-400 text-lg mb-8 leading-relaxed">
                             Ob es um die Erstellung deiner modernen Corporate Identity oder die präzise Umsetzung deiner Webseite inkl. SEO und Marketingdesign geht – ich verbinde Ästhetik mit technischer Performance.
                         </p>
-                        <div class="flex gap-8">
-                            <div>
-                                <div class="text-3xl font-bold text-white">5.0</div>
-                                <div class="text-zinc-500 text-sm">Sterne Bewertung</div>
-                            </div>
-                            <div>
-                                <div class="text-3xl font-bold text-white">100%</div>
-                                <div class="text-zinc-500 text-sm">Leidenschaft</div>
-                            </div>
-                        </div>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="space-y-4">
@@ -160,7 +181,7 @@
                 </div>
             </section>
 
-            <!-- Leistungen -->
+            <!-- Leistungen (Wiederhergestellt) -->
             <section id="services" class="py-24 px-6 bg-zinc-950">
                 <div class="max-w-7xl mx-auto">
                     <div class="mb-16">
@@ -168,60 +189,26 @@
                         <p class="text-zinc-500">Dienstleistungen für einen professionellen Auftritt.</p>
                     </div>
                     <div class="grid md:grid-cols-3 gap-6 text-zinc-100">
-                        <!-- Karte 1: Webdesign inkl. SEO -->
                         <div class="p-8 h-80 flex flex-col justify-end rounded-2xl border border-zinc-800 bg-zinc-900 group hover:border-zinc-700 transition-all">
                             <i data-lucide="layout" class="mb-auto text-zinc-400 group-hover:text-white transition-colors w-8 h-8"></i>
                             <h3 class="text-xl font-bold mb-3">Premium Webdesign</h3>
-                            <p class="text-zinc-500 text-sm leading-relaxed">Maßgeschneiderte High-End Webseiten inkl. SEO, die nicht nur gut aussehen, sondern Ergebnisse liefern. Von der Konzeption bis zum Launch.</p>
+                            <p class="text-zinc-500 text-sm leading-relaxed">Maßgeschneiderte High-End Webseiten inkl. SEO, die Ergebnisse liefern.</p>
                         </div>
-                        <!-- Karte 2: Marketing- und Werbedesign -->
                         <div class="p-8 h-80 flex flex-col justify-end rounded-2xl border border-zinc-800 bg-zinc-900 group hover:border-zinc-700 transition-all">
                             <i data-lucide="megaphone" class="mb-auto text-zinc-400 group-hover:text-white transition-colors w-8 h-8"></i>
-                            <h3 class="text-xl font-bold mb-3">Marketing- und Werbedesign</h3>
-                            <p class="text-zinc-500 text-sm leading-relaxed">Strategische Konzepte und visuelle Verkaufsförderung, um deine Zielgruppe in der Region effektiv zu erreichen und zu überzeugen.</p>
+                            <h3 class="text-xl font-bold mb-3">Marketing-Design</h3>
+                            <p class="text-zinc-500 text-sm leading-relaxed">Strategische Konzepte für visuelle Verkaufsförderung.</p>
                         </div>
-                        <!-- Karte 3: Branding -->
                         <div class="p-8 h-80 flex flex-col justify-end rounded-2xl border border-zinc-800 bg-zinc-900 group hover:border-zinc-700 transition-all">
                             <i data-lucide="pen-tool" class="mb-auto text-zinc-400 group-hover:text-white transition-colors w-8 h-8"></i>
                             <h3 class="text-xl font-bold mb-3">Branding</h3>
-                            <p class="text-zinc-500 text-sm leading-relaxed">Entwicklung einer unverwechselbaren visuellen Identität – vom professionellen Logo-Design bis zum fertigen Brand-Guide für dein Unternehmen.</p>
+                            <p class="text-zinc-500 text-sm leading-relaxed">Entwicklung einer unverwechselbaren visuellen Identität.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Testimonials -->
-            <section id="testimonials" class="py-24 px-6 bg-zinc-950">
-                <div class="max-w-7xl mx-auto">
-                    <h2 class="text-4xl font-bold mb-16 text-center text-zinc-100">Referenzen</h2>
-                    <div class="grid md:grid-cols-2 gap-12 text-left">
-                        <div class="space-y-6 border-l border-zinc-800 pl-8 group">
-                            <div class="flex gap-1 text-white">
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            </div>
-                            <p class="text-zinc-400 text-lg leading-relaxed">"Die Zusammenarbeit mit Lunar Studio war ein voller Erfolg. Unsere neue Webseite übertrifft alle Erwartungen."</p>
-                            <p class="font-bold text-sm tracking-widest uppercase text-zinc-500">— Florian Nauendorff</p>
-                        </div>
-                        <div class="space-y-6 border-l border-zinc-800 pl-8 group">
-                            <div class="flex gap-1 text-white">
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            </div>
-                            <p class="text-zinc-400 text-lg leading-relaxed">"Kompetent, schnell und mit einem Auge für das Detail. Absolut empfehlenswert!"</p>
-                            <p class="font-bold text-sm tracking-widest uppercase text-zinc-500">— Tobias Pralle</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Kontakt -->
+            <!-- Kontakt (Wiederhergestellt) -->
             <section id="contact" class="py-24 px-6 bg-zinc-950">
                 <div class="max-w-3xl mx-auto border border-zinc-800 rounded-3xl p-8 md:p-12 bg-zinc-900/20 text-zinc-100">
                     <h2 class="text-3xl font-bold mb-4">Projekt anfragen.</h2>
@@ -231,116 +218,118 @@
                             <input type="text" name="name" placeholder="Dein Name" required class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 focus:border-white transition-colors">
                             <input type="email" name="email" placeholder="deine@email.de" required class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 focus:border-white transition-colors">
                         </div>
-                        <input type="text" name="subject" placeholder="Betreff" required class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 focus:border-white transition-colors">
                         <textarea name="message" rows="4" placeholder="Deine Nachricht..." required class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 focus:border-white transition-colors"></textarea>
-                        
-                        <div class="flex items-start gap-3">
-                            <div class="flex items-center h-5">
-                                <input id="privacy-policy" name="privacy-policy" type="checkbox" required class="w-4 h-4 bg-zinc-900 border-zinc-800 rounded focus:ring-zinc-100 text-zinc-100 cursor-pointer">
-                            </div>
-                            <label for="privacy-policy" class="text-sm text-zinc-500 cursor-pointer">
-                                Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung deiner Anfrage gelöscht. Hinweis: Du kannst deine Einwilligung jederzeit für die Zukunft per E-Mail an [E-Mail-Adresse] widerrufen. Detaillierte Informationen findest du in meiner 
-                                <a href="#" onclick="showPage('datenschutz')" class="text-zinc-300 underline hover:text-white transition-colors">Datenschutzerklärung</a>.
-                            </label>
-                        </div>
-
                         <button type="submit" class="w-full py-4 bg-zinc-100 text-zinc-950 font-bold rounded-xl hover:bg-white transition-all">Anfrage senden</button>
                     </form>
                 </div>
             </section>
         </div>
 
-        <!-- IMPRESSUM PAGE -->
+        <!-- IMPRESSUM -->
         <div id="page-impressum" class="page-content hidden pt-32 pb-20 px-6 max-w-4xl mx-auto">
-            <h1 class="text-4xl font-bold mb-12 text-white">Impressum</h1>
-            <div class="space-y-8 text-zinc-400 leading-relaxed">
-                <section>
-                    <h2 class="text-xl text-white font-bold mb-3">Angaben gemäß § 5 TMG</h2>
-                    <p class="text-lg">
-                        Lunar Studio<br>
-                        [Vorname Nachname]<br>
-                        Korsorsstraße [Hausnummer]<br>
-                        26203 Wardenburg
-                    </p>
-                </section>
-                <section>
-                    <h2 class="text-xl text-white font-bold mb-3">Kontakt</h2>
-                    <p>Telefon: [Telefonnummer]<br>E-Mail: [E-Mail-Adresse]<br>Website: www.lunar-studio.de</p>
-                </section>
-                <section>
-                    <h2 class="text-xl text-white font-bold mb-3">Redaktionell verantwortlich</h2>
-                    <p>[Vorname Nachname]<br>Korsorsstraße [Hausnummer]<br>26203 Wardenburg</p>
-                </section>
-                <p class="pt-8 border-t border-zinc-800"><a href="#" onclick="showPage('home')" class="text-white flex items-center gap-2 hover:underline"><i data-lucide="arrow-left" class="w-4 h-4"></i> Zurück zur Startseite</a></p>
+            <h1 class="text-4xl font-bold mb-12 text-white text-center">Impressum</h1>
+            <div class="bg-zinc-900/50 p-8 rounded-3xl border border-zinc-800">
+                <p class="text-zinc-400 leading-relaxed">
+                    Angaben gemäß § 5 TMG:<br><br>
+                    <strong class="text-white">Lunar Studio</strong><br>
+                    [Inhaber Name]<br>
+                    [Straße Hausnummer]<br>
+                    [PLZ Ort]<br><br>
+                    <strong class="text-white">Kontakt:</strong><br>
+                    E-Mail: [Deine E-Mail]<br>
+                    Telefon: [Deine Telefonnummer]
+                </p>
             </div>
+            <p class="pt-8 text-center"><a href="#" onclick="showPage('home')" class="text-white hover:underline flex items-center justify-center gap-2"><i data-lucide="arrow-left" class="w-4 h-4"></i> Zurück zur Startseite</a></p>
         </div>
 
-        <!-- DATENSCHUTZ PAGE -->
+        <!-- DATENSCHUTZ (Mit Chatbot Ergänzung) -->
         <div id="page-datenschutz" class="page-content hidden pt-32 pb-20 px-6 max-w-4xl mx-auto">
-            <h1 class="text-4xl font-bold mb-12 text-white">Datenschutzerklärung</h1>
-            <div class="space-y-8 text-zinc-400 leading-relaxed text-sm">
+            <h1 class="text-4xl font-bold mb-12 text-white text-center">Datenschutzerklärung</h1>
+            <div class="space-y-8 text-zinc-400 leading-relaxed text-sm bg-zinc-900/50 p-8 rounded-3xl border border-zinc-800">
                 <section>
-                    <h2 class="text-xl text-white font-bold mb-3">1. Datenschutz auf einen Blick</h2>
-                    <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit deinen personenbezogenen Daten passiert, wenn du diese Website besuchst.</p>
+                    <h2 class="text-xl font-bold text-white mb-4">1. Datenschutz auf einen Blick</h2>
+                    <p>Wir freuen uns über Ihr Interesse an unserer Website. Der Schutz Ihrer Privatsphäre ist für uns sehr wichtig. Nachstehend informieren wir Sie ausführlich über den Umgang mit Ihren Daten.</p>
                 </section>
+                
                 <section>
-                    <h2 class="text-xl text-white font-bold mb-3">2. Hosting</h2>
-                    <p>Ich hoste die Inhalte meiner Website bei folgendem Anbieter:</p>
-                    <p class="text-white font-semibold">[Name & Anschrift deines Hosters]</p>
+                    <h2 class="text-xl font-bold text-white mb-4">2. Digitaler Assistent (Chatbot)</h2>
+                    <p>Auf unserer Website setzen wir einen interaktiven digitalen Assistenten (Chatbot) ein, um Ihre Anfragen effizient zu beantworten. Die Nutzung des Chatbots erfolgt auf freiwilliger Basis.</p>
+                    <p class="mt-2"><strong>Verarbeitung von Daten:</strong> Wenn Sie den Chatbot nutzen, werden die von Ihnen eingegebenen Texte sowie technische Protokolldaten (Session-ID) verarbeitet, um den Dialog führen zu können. Es erfolgt keine dauerhafte Speicherung von Chat-Protokollen in Verbindung mit Ihrer IP-Adresse über die aktuelle Sitzung hinaus, sofern Sie keine explizite Kontaktanfrage stellen.</p>
+                    <p class="mt-2"><strong>Rechtsgrundlage:</strong> Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer effizienten Kundenkommunikation) oder Art. 6 Abs. 1 lit. b DSGVO, falls Ihre Anfrage auf den Abschluss eines Vertrages abzielt.</p>
                 </section>
+
                 <section>
-                    <h2 class="text-xl text-white font-bold mb-3">3. Terminvereinbarung über Calendly</h2>
-                    <p>Auf meiner Website besteht die Möglichkeit, Termine für Erstberatungen über den Dienst <strong>Calendly</strong> zu vereinbaren.</p>
-                    <p>Anbieter ist die Calendly LLC, 271 17th St NW, 10th Floor, Atlanta, Georgia 30363, USA. Weitere Informationen findest du in den Datenschutzbestimmungen von Calendly.</p>
+                    <h2 class="text-xl font-bold text-white mb-4">3. Calendly</h2>
+                    <p>Wir nutzen das Tool „Calendly“, um Terminbuchungen zu vereinfachen. Anbieter ist die Calendly LLC, 271 17th St NW, 10th Floor, Atlanta, Georgia 30363, USA. Bei der Nutzung werden die von Ihnen eingegebenen Daten an Calendly übertragen.</p>
                 </section>
-                <section>
-                    <h2 class="text-xl text-white font-bold mb-3">4. Datenerfassung via Kontaktformular</h2>
-                    <p>Ich nutze den Dienst <strong>Formspree</strong> zur Übermittlung der Formulardaten. Die Datenverarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.</p>
-                </section>
-                <section>
-                    <h2 class="text-xl text-white font-bold mb-3">5. Deine Rechte</h2>
-                    <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung und Widerspruch.</p>
-                </section>
-                <p class="pt-8 border-t border-zinc-800"><a href="#" onclick="showPage('home')" class="text-white flex items-center gap-2 hover:underline"><i data-lucide="arrow-left" class="w-4 h-4"></i> Zurück zur Startseite</a></p>
             </div>
+            <p class="pt-8 text-center"><a href="#" onclick="showPage('home')" class="text-white hover:underline flex items-center justify-center gap-2"><i data-lucide="arrow-left" class="w-4 h-4"></i> Zurück zur Startseite</a></p>
         </div>
     </main>
 
     <!-- Footer -->
     <footer class="border-t border-zinc-800 pt-20 pb-10 px-6 bg-zinc-950">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-4 gap-12 mb-16">
-                <div class="col-span-2">
-                    <a href="#" onclick="showPage('home')" class="text-xl font-bold tracking-tighter flex items-center gap-2 mb-6">
-                        <i data-lucide="moon" class="w-5 h-5"></i>
-                        LUNAR STUDIO
-                    </a>
-                    <p class="text-zinc-500 max-w-sm">Webseiten und Branding für Oldenburg und das Oldenburger Land.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-6 text-white text-sm">Rechtliches</h4>
-                    <ul class="space-y-4 text-zinc-500 text-sm">
-                        <li><a href="#" onclick="showPage('impressum')" class="hover:text-white transition-colors">Impressum</a></li>
-                        <li><a href="#" onclick="showPage('datenschutz')" class="hover:text-white transition-colors">Datenschutz</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-6 text-white text-sm">Social</h4>
-                    <div class="flex gap-4">
-                        <a href="https://www.instagram.com/lunarstudio.de/" target="_blank" class="p-2 border border-zinc-800 rounded-full hover:bg-zinc-800 transition-colors text-zinc-500 hover:text-white" title="Instagram">
-                            <i data-lucide="instagram" class="w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-xs text-zinc-600">
+                <p>&copy; 2026 Lunar Studio | Webdesign aus Wardenburg</p>
             </div>
-            <div class="pt-8 border-t border-zinc-900 flex justify-between items-center text-xs text-zinc-600">
-                <p>&copy; 2026 Lunar Studio</p>
-                <p>Webdesign aus Wardenburg</p>
+            <div class="flex gap-6 text-xs text-zinc-500 uppercase tracking-widest font-bold">
+                <a href="#" onclick="showPage('impressum')" class="hover:text-white transition-colors">Impressum</a>
+                <a href="#" onclick="showPage('datenschutz')" class="hover:text-white transition-colors">Datenschutz</a>
             </div>
         </div>
     </footer>
 
+    <!-- DIGITALER ASSISTENT WIDGET -->
+    <div id="chatbot-container" class="fixed bottom-5 right-5 z-[60]">
+        <!-- Chat Toggle Button -->
+        <button id="chat-toggle" class="w-14 h-14 bg-zinc-100 text-zinc-950 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
+            <i data-lucide="message-square" id="chat-icon"></i>
+        </button>
+
+        <!-- Chat Window -->
+        <div id="chat-window" class="hidden absolute bottom-20 right-0 w-[350px] max-w-[90vw] h-[520px] bg-zinc-950 border border-zinc-800 rounded-3xl flex flex-col overflow-hidden shadow-2xl">
+            <!-- Header -->
+            <div class="p-5 border-b border-zinc-800 bg-zinc-900/50 flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-950">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-tighter">Digitaler Assistent</h4>
+                    <p class="text-[10px] text-zinc-500 flex items-center gap-1"><span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span> Online & Transparent</p>
+                </div>
+            </div>
+
+            <!-- Messages Area -->
+            <div id="chat-messages" class="flex-1 overflow-y-auto p-5 space-y-4 custom-scrollbar">
+                <div class="chat-bubble-bot p-3 text-sm text-zinc-300">
+                    Hallo! Ich bin der Assistent von Lunar Studio. Frag mich gerne nach Preisen, dem Ablauf oder wie lange dein Projekt dauert. Wie kann ich dir helfen?
+                </div>
+            </div>
+
+            <!-- Quick Replies -->
+            <div id="quick-replies" class="p-4 flex flex-wrap gap-2 border-t border-zinc-800 bg-zinc-900/20">
+                <button onclick="handleBotQuery('preise')" class="text-[10px] uppercase font-bold tracking-widest px-3 py-2 rounded-full border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 transition-colors">Preise?</button>
+                <button onclick="handleBotQuery('prozess')" class="text-[10px] uppercase font-bold tracking-widest px-3 py-2 rounded-full border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 transition-colors">Ablauf?</button>
+                <button onclick="handleBotQuery('dauer')" class="text-[10px] uppercase font-bold tracking-widest px-3 py-2 rounded-full border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 transition-colors">Dauer?</button>
+                <button onclick="handleBotQuery('sonstiges')" class="text-[10px] uppercase font-bold tracking-widest px-3 py-2 rounded-full border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 transition-colors">Spezial-Projekt?</button>
+            </div>
+
+            <!-- Manual Input -->
+            <div class="p-4 border-t border-zinc-800 bg-zinc-950">
+                <div class="relative">
+                    <input type="text" id="chat-input" placeholder="Nachricht..." class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-2 text-sm focus:outline-none focus:border-zinc-500">
+                    <button id="send-btn" class="absolute right-2 top-2 text-zinc-400 hover:text-white">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // --- General Navigation ---
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
@@ -357,9 +346,7 @@
             lucide.createIcons();
         }
 
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', toggleMenu);
-        }
+        if (mobileMenuBtn) { mobileMenuBtn.addEventListener('click', toggleMenu); }
 
         function showPage(pageId) {
             document.querySelectorAll('.page-content').forEach(p => p.classList.add('hidden'));
@@ -370,6 +357,86 @@
             }
             if (mobileMenu && !mobileMenu.classList.contains('hidden')) toggleMenu();
         }
+
+        // --- Chat Bot Logic ---
+        const chatToggle = document.getElementById('chat-toggle');
+        const chatWindow = document.getElementById('chat-window');
+        const chatBtnIcon = document.getElementById('chat-icon');
+        const messagesArea = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        chatToggle.addEventListener('click', () => {
+            const isHidden = chatWindow.classList.contains('hidden');
+            if (isHidden) {
+                chatWindow.classList.remove('hidden');
+                chatBtnIcon.setAttribute('data-lucide', 'x');
+            } else {
+                chatWindow.classList.add('hidden');
+                chatBtnIcon.setAttribute('data-lucide', 'message-square');
+            }
+            lucide.createIcons();
+        });
+
+        function addMessage(text, isBot = false) {
+            const div = document.createElement('div');
+            div.className = isBot ? 'chat-bubble-bot p-3 text-sm text-zinc-300' : 'chat-bubble-user p-3 text-sm text-zinc-100 ml-auto w-fit max-w-[85%]';
+            div.innerHTML = text;
+            messagesArea.appendChild(div);
+            messagesArea.scrollTop = messagesArea.scrollHeight;
+        }
+
+        function handleBotQuery(type) {
+            let userQuery = "";
+            let botReply = "";
+
+            switch(type) {
+                case 'preise':
+                    userQuery = "Was kostet eine Webseite?";
+                    botReply = "Pssst! Ab dem 16.03.2026 wird es eine Eröffnungsaktion geben. Jede Webseite wird innerhalb eines bestimmten Zeitraums nur 499,99€ kosten. Soll ich dir Bescheid geben, wenn die Rabattaktion startet?";
+                    break;
+                case 'prozess':
+                    userQuery = "Wie ist der Ablauf?";
+                    botReply = "Mein Prozess ist klar strukturiert: <b>Analyse -> Konzeption -> Umsetzung -> Abschlusskontrolle</b>. Ich halte dich laufend über den aktuellen Stand auf dem Laufenden. Soll ich dir mehr zu einem der Schritte erklären?";
+                    break;
+                case 'dauer':
+                    userQuery = "Wie lange dauert ein Projekt?";
+                    botReply = "Alles Gute braucht Zeit. Da Qualität entscheidend ist, kommt es auf den Umfang an – in der Regel sind Projekte jedoch innerhalb von 14 Tagen abgeschlossen. Passt das in deinen Zeitplan?";
+                    break;
+                case 'sonstiges':
+                    userQuery = "Sind Sonderanfragen möglich?";
+                    botReply = "Individuelle Projekte sind jederzeit willkommen! Ich gebe dir eine ehrliche Einschätzung, ob und wie wir das umsetzen können. Möchtest du mir dein Projekt kurz beschreiben?";
+                    break;
+            }
+
+            addMessage(userQuery, false);
+            setTimeout(() => addMessage(botReply, true), 500);
+        }
+
+        function processManualInput() {
+            const val = chatInput.value.trim().toLowerCase();
+            if(!val) return;
+
+            addMessage(chatInput.value, false);
+            chatInput.value = "";
+
+            setTimeout(() => {
+                if (val.includes('preis') || val.includes('kost') || val.includes('geld')) {
+                    handleBotQuery('preise');
+                } else if (val.includes('ablauf') || val.includes('prozess') || val.includes('schritte')) {
+                    handleBotQuery('prozess');
+                } else if (val.includes('zeit') || val.includes('dauer') || val.includes('lang')) {
+                    handleBotQuery('dauer');
+                } else if (val.includes('sonder') || val.includes('spezial') || val.includes('idee')) {
+                    handleBotQuery('sonstiges');
+                } else {
+                    addMessage("Ich bin spezialisiert auf Fragen zu Preisen, Ablauf und Dauer. Für alles andere vereinbare am besten ein kurzes Erstgespräch über den Button oben! 😊", true);
+                }
+            }, 600);
+        }
+
+        sendBtn.addEventListener('click', processManualInput);
+        chatInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') processManualInput(); });
     </script>
 </body>
 </html>
